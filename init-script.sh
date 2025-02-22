@@ -19,7 +19,7 @@ execute_sql_with_retries() {
     echo "Intento $attempt de $max_retries para ejecutar comandos SQL en la base de datos..."
 
     # Ejecutar como el usuario 'postgres' sin necesidad de contraseña
-    if sudo -u postgres psql -d ${db_name} -f /init-db.sql; then
+    if sudo -u postgres psql -d ${db_name} -f init-db.sql; then
       echo "Comandos SQL ejecutados con éxito."
       return 0
     else
